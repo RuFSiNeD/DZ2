@@ -1,0 +1,33 @@
+// Цвета
+$primary-color: #9575cd;
+$primary-hover: #7e57c2;
+$text-color: #333;
+$placeholder-color: #999;
+$background-color: #ebedf0;
+$border-color: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$white: white;
+$black: black;
+
+// Размеры
+$container-max-width: 400px;
+$input-padding: 10px;
+$button-padding: 10px;
+$border-radius: 4px;
+
+// Шрифты
+$font-family-base: Arial, sans-serif;
+$font-family-heading: 'Archivo Black', 'Montserrat', sans-serif;
+$font-family-mono: 'Roboto Mono', monospace;
+
+// Отступы
+$spacing-small: 10px;
+$spacing-medium: 20px;
+$spacing-large: 30px;
+
+// Тени
+$box-shadow: 0 2px 15px $shadow-color;
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+// Анимации
+$transition-duration: 0.3s; 

@@ -1,0 +1,287 @@
+
+// Переменные
+$primary-color: #9575cd;
+$primary-hover: #7e57c2;
+$text-color: #333;
+$placeholder-color: #999;
+$background-color: #ebedf0;
+$border-color: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$white: white;
+$black: black;
+
+// Миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin input-styles {
+  padding: $input-padding;
+  font-size: 14px;
+  max-width: $container-max-width;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  color: $text-color;
+  background: $white;
+  transition: all $transition-duration ease;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+}
+
+// Общие стили
+body {
+  overflow: hidden;
+  font-family: $font-family-base;
+  background-image: url('../public/2000_5fcd4d9676ad8.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+// Стили для контейнера формы
+.form-container {
+  min-height: 10vh;
+  @include flex-center;
+  flex-direction: column;
+  padding: $spacing-medium;
+  width: 100%;
+  max-width: 100%;
+
+  input, textarea {
+    @include input-styles;
+    width: calc(100% - #{$spacing-medium * 2});
+    margin: 0 $spacing-medium;
+    box-sizing: border-box;
+  }
+  span {
+    font-size: smaller;
+    color: rgba(255, 0, 0, 0.73);
+    width: calc(100% - #{$spacing-medium * 2});
+    margin: 0 $spacing-medium;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+// Стили для формы
+form {
+  width: 100%;
+  max-width: 400px;
+  background: $background-color;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+}
+
+// Стили для заголовка формы
+.form-header {
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-shadow: $text-shadow;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: $spacing-medium;
+    font-family: $font-family-heading;
+    margin-bottom: $spacing-medium;
+  }
+}
+
+// Стили для заголовков
+h2 {
+  flex-grow: 9;
+  justify-self: flex-start;
+  margin-left: $spacing-small;
+  font-size: 2rem;
+  color: $white;
+  font-family: $font-family-mono;
+}
+
+// Стили для хедера
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+  width: 100%;
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: $spacing-medium;
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 0;
+      color: $white;
+      font-family: $font-family-mono;
+      font-size: 2rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    //padding-right: $spacing-large;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: $spacing-medium;
+    text-align: center;
+
+    .logo-section {
+      flex-direction: column;
+      gap: $spacing-small;
+
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    .links {
+      justify-content: center;
+    }
+  }
+}
+
+
+// Стили для кнопки
+button {
+  width: calc(100% - #{$spacing-medium * 2});
+  margin: 0 $spacing-medium;
+  padding: $button-padding;
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color $transition-duration ease;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+// Стили для таблицы
+.table-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: $spacing-large;
+
+  table {
+    background: $background-color;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: $box-shadow;
+
+    td {
+      padding: $spacing-medium;
+      text-align: center;
+      border: 1px solid $border-color;
+      background: $white;
+    }
+  }
+}
+
+.input-wrap {
+  margin-block: 10px;
+}
+
+// Медиа-запросы
+@media (max-width: 480px) {
+  .form-header {
+    display: none;
+  }
+
+  .form-container {
+    align-items: flex-end;
+    min-height: 50vh;
+
+    input, textarea {
+      width: calc(100% - #{$spacing-small * 2});
+      margin: 0 $spacing-small;
+      padding: $spacing-medium;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+  }
+
+  form {
+    padding: $spacing-medium;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  button {
+    width: calc(100% - #{$spacing-small * 2});
+    margin: 0 $spacing-small;
+    padding: $spacing-medium;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: $spacing-medium;
+  }
+
+  input, textarea {
+    padding: $spacing-small;
+    font-size: 14px;
+  }
+
+} 

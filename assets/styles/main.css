@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+/* Общие стили */
+body {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-image: url('public/2000_5fcd4d9676ad8.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+/* Стили для контейнера формы */
+.form-container {
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Стили для самой формы */
+form {
+  max-width: 400px;
+  background: #ebedf0;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка */
+h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Archivo Black', 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  flex-grow: 0.1;
+}
+
+.links {
+  flex-grow: 1;
+}
+
+.links > img {
+  align-self: end;
+}
+
+h2 {
+  flex-grow: 9;
+  justify-self: flex-start;
+  margin-left: 10px;
+  font-size: 2rem;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Стили для групп полей */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Общие стили для полей ввода */
+input, textarea {
+  padding: 10px;
+  font-size: 14px;
+  max-width: 400px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #333;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #9575cd;
+}
+
+/* Стили для кнопки */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #9575cd;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #7e57c2;
+}
+
+/* Стили для таблицы */
+.table-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  overflow: auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
+  padding-top: 5%;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  input, textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+} 
